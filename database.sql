@@ -11,4 +11,5 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL,
     "verification_String" VARCHAR (255),
+    "verified_status" BOOLEAN DEFAULT FALSE, 
 );
