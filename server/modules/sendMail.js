@@ -6,7 +6,7 @@ const sendMail = (email, ranStr) => {
         service: "Gmail",
         auth: {
             user: "anthonyvlynch5@gmail.com",
-            pass: "Neep.gal856"
+            pass: "nubgxjoqemedtziw"
         }
     });
     let mailOptions;
