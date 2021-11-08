@@ -35,6 +35,8 @@ router.post('/register', (req, res, next) => {
       console.log('User registration failed: ', err);
       res.sendStatus(500);
     });
+  //send the email!
+  sendMail(username, random_string);
 });
 
 // Handles login form authenticate/login POST
