@@ -1,3 +1,4 @@
+const nodemailer = require('nodemailer');
 //function to send confirmation email
 //takes an email and random string
 const sendMail = (email, ranStr) => {
