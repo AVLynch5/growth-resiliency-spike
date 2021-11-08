@@ -26,17 +26,15 @@ router.post('/register', (req, res, next) => {
   const password = encryptLib.encryptPassword(req.body.password);
   const random_string = randomString();
 
-  const queryText = `INSERT INTO "user" (username, password, verification_String)
+  const queryText = `INSERT INTO "user" ("username", "password", "verification_String")
     VALUES ($1, $2, $3) RETURNING id`;
   pool
     .query(queryText, [username, password, random_string])
-    .then(() => res.sendStatus(201))
+    .then(sendMail(username, random_string)).then(() => res.sendStatus(201))
     .catch((err) => {
       console.log('User registration failed: ', err);
       res.sendStatus(500);
     });
-  //send the email!
-  sendMail(username, random_string);
 });
 
 // Handles login form authenticate/login POST
