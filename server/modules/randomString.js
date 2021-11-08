@@ -8,3 +8,7 @@ const randomString = () => {
     }
     return randomStr;
 }
+
+module.exports = {
+    randomString,
+};
